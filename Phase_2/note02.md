@@ -65,3 +65,48 @@ my_robot = Robot("Bot")
 my_robot.say_hello() # 调用时不需要传递self参数，Python会自动传入
 my_robot.move(5)
 ```
+
+# 第十一课：继承（Inheritance） - 构建类家族
+
+在机器人领域，我们有不同种类的机器人：移动机器人、机械臂、无人机...它们有共同的特性（如名字、电量），也有各自独特的功能。我们不需要为每个机器人从头重写代码。继承允许我们基于一个已有的**类（父类/基类）**来创建新**类（子类/派生类）** 
+
+**子类自动获得父类的所有属性和方法**，并且可以：
+- 添加自己特有的属性和方法
+- 重写父类的方法，以改变其行为
+
+这就像在“通用机器人设计图”的基础上，绘制更具体的“无人机设计图”
+
+# 语法
+```python
+class ParentClass:
+    # 父类的定于
+    pass
+class ChildClass(ParentClass): # 括号内指定父类
+    # 子类的定义
+    pass
+```
+
+# 第十二课：模块化与导入（Modularity & Import）- 管理大型项目
+
+当项目变大时，我们不能把所有代码都写在一个文件里。我们需要将代码拆分到不同的 ``.py`` 文件中，每个文件负责一个特定的功能（模块），然后通过 ``import`` 语句将它们组合起来。这正是PyTorch、YOLO等大型项目组织代码的方式
+
+## 核心概念
+- **模块（Module）**：一个 .py 文件就是一个模块
+- **导入（Import）**：在一个模块中使用另一个模块中的代码
+
+## 基本语法
+```python
+# 导入整个模块
+import module_name
+# 使用模块中的类
+obj = module_name.ClassName()
+
+# 从模块中导入特定的类/函数
+from module_name import ClassName
+# 直接使用类名
+obj = ClassName()
+
+# 给导入的模块或类起别名（常用于长名字）
+import very_long_module_name as vlmn
+from torch import nn as neural_network
+```
