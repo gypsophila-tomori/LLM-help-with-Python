@@ -1,15 +1,3 @@
-'''
-    函数：
-    各部分的意义
-    def <function name>(参数1, 参数2, ......):
-        """函数用途说明，写好注释方便检查"""
-        <具体操作>
-        结果 = 参数1 + 参数2    #例子
-        return 结果
-    
-    如何调用？
-    <函数名>(输入参数1, 输入参数2)
-'''
 # 任务：重构Basic_Grammar里的年龄计算器exp02
 
 def validate_years(birth_year, currnet_year):
@@ -36,19 +24,29 @@ def get_year_input(prompt):
             return False
 
 def main():
-    """主函数"""
     print("======年龄计算器======")
     check = 0
     while (check == 0):
-        birth_year = get_year_input(input("请输入出生年份："))
-        current_year = get_year_input(input("请输入当前年份："))
+        user_input1 = input("请输入出生年份：")  # 先保存输入
+        user_input2 = input("请输入当前年份：")
+        
+        print(f"调试：用户输入1='{user_input1}'，输入2='{user_input2}'")
+        
+        birth_year = get_year_input(user_input1)
+        current_year = get_year_input(user_input2)
+        
+        print(f"调试：转换后 birth_year={birth_year}(类型{type(birth_year)}), "
+              f"current_year={current_year}(类型{type(current_year)})")
+        
         if validate_years(birth_year, current_year):
             age = current_year - birth_year
             print(f"你现在的年龄是：{age}")
             check = 1
         else:
+            print("验证失败，重新输入")
             check = 0
-    print("======程序结束！======")
+
+
 if __name__ == "__main__":
     main()
 
