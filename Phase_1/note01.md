@@ -77,3 +77,26 @@ Python的**字典（Dictionary）**就是为此而生。它是一个无序的 ``
 **访问值**：``my_dict["name"]`` （结果是 "Robot"）。如果键不存在会报错  
 **安全访问**：``my_dict.get("name")`` 或 ``my_dict.get("color", "unknown")`` （如果键不存在，返回默认值）  
 **修改/添加键值对**：``my_dict["speed"] = 2.0`` （修改已存在的键）或 ``my_dict["color"] = "red"`` （添加新的键值对）  
+
+# 第七课：函数（Function） - 代码的模块化
+
+当代码变得越来越复杂时，我们需要一种方式来封装可重用的逻辑块，这就是**函数（Function）**。在机器人编程中，函数用于定义特定的行为或计算，例如“计算到目标的距离”、“控制机器人移动一步”
+
+函数就像一台专用的机器：你从入口（参数）投入原材料，机器内部进行处理，然后从出口（返回值）得到产品
+
+## 定义函数
+```python
+def function_name(parameter1, parameter2):
+    # 函数体
+    result = parameter1 + parameter2
+    return result
+```
+``def`` 是定义函数的关键字  
+``function_name`` 是你给机器取的名字  
+``(parameter1, parameter2)`` 是机器的入口，即参数  
+``return`` 语句是机器的出口，将结果返回给调用者。如果没有return，函数默认返回None  
+
+## 调用函数：
+```python
+output = function_name(10, 20) # output 将会是 30
+```
