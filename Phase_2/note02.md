@@ -32,3 +32,9 @@ class Robot:
         self.battery = battery
         print(f"{self.name} is powered on! Battery: {self.battery}%")
 ```
+
+# 第十课：实例方法（Instance Method） - 对象的行为
+
+对象不仅要有状态（属性），还要有行为（方法）。实例方法就是定义在类内部，用于操作对象自身数据的函数。它的第一个参数永远是 self，通过 self 可以访问该对象的所有属性和其他方法。
+
+这就像给汽车设计图添加了“启动引擎”、“打开车灯”等功能说明。

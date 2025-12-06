@@ -1,4 +1,4 @@
-class Robot():
+class Robot:
     pass
 
 robot1 = Robot()
