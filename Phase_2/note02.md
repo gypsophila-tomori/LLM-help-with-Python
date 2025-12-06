@@ -35,6 +35,33 @@ class Robot:
 
 # 第十课：实例方法（Instance Method） - 对象的行为
 
-对象不仅要有状态（属性），还要有行为（方法）。实例方法就是定义在类内部，用于操作对象自身数据的函数。它的第一个参数永远是 self，通过 self 可以访问该对象的所有属性和其他方法。
+对象不仅要有状态（属性），还要有行为（方法）。实例方法就是定义在类内部，用于操作对象自身数据的函数。它的第一个参数永远是 self，通过 self 可以访问该对象的所有属性和其他方法
 
-这就像给汽车设计图添加了“启动引擎”、“打开车灯”等功能说明。
+这就像给汽车设计图添加了“启动引擎”、“打开车灯”等功能说明
+
+**定义实例的方法** 
+```python
+class Robot:
+    def __init__(self, name):
+        self.name = name
+        self.battery = 100
+
+    def say_hello(self): # 这是一个实例方法
+        print(f"Hello, I'm {self.name}. Battery: {self.battery}%")
+
+    def move(self, distance):
+        # 假设移动会消耗电量，每单位距离消耗1%
+        cost = distance * 1
+        if self.battery >= cost:
+            self.battery -= cost
+            print(f"{self.name} moved {distance} units. Battery left: {self.battery}%")
+        else:
+            print(f"{self.name} cannot move. Not enough battery!")
+```
+
+**调用实例方法**
+```python
+my_robot = Robot("Bot")
+my_robot.say_hello() # 调用时不需要传递self参数，Python会自动传入
+my_robot.move(5)
+```
