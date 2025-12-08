@@ -1,0 +1,15 @@
+bboxes = [[10, 20, 100, 150],[30, 40, 120, 180]]
+
+print(bboxes[0][1])
+print(bboxes[1:2])  # 切片
+print(bboxes[1])
+
+bboxes.append([5, 5, 50, 50])
+bboxes.insert(0,[0, 0, 10, 10])
+
+bboxes[1][2] = 200
+
+deleted_box = bboxes.pop()
+
+print(deleted_box)
+print(bboxes)
