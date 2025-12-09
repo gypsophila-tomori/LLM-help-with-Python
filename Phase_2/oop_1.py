@@ -13,18 +13,23 @@ class Camera:
         print(f"Camera {self.resolution}p stop!")
 
     def set_fps(self, new_fps):
-        new_fps = int(input("please set a new fps"))
         self.fps = new_fps
+        print("fps set to ", new_fps)
 
 
 
-def main():
+''' def main():
     cam1 = Camera(1080)
     cam2 = Camera(720)
 
     print(cam1.resolution)
     print(cam2.fps)
-
+    '''
+def main():
+    cam1 = Camera(1080)
+    cam1.start_recording()
+    cam1.set_fps(60)
+    print(cam1.fps)
 
 if __name__ == "__main__":
     main()
