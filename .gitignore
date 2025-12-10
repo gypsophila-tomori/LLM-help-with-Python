@@ -1,3 +1,4 @@
 learn_Python.code-workspace
 __pycache__/
 *.pyc
+.idea/*
